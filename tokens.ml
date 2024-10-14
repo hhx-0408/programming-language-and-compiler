@@ -1,5 +1,3 @@
-(* tokens.ml *)
-
 type token =
   | KEYWORD of string
   | OPERATOR of string
@@ -8,9 +6,9 @@ type token =
   | STRING_LITERAL of string
   | MUSICNOTE of string
   | DURATION of string
-  | LPAREN        (* '(' *)
-  | RPAREN        (* ')' *)
-  | SEMICOLON     (* ';' *)
-  | COMMA         (* ',' *)
+  | LPAREN       
+  | RPAREN        
+  | SEMICOLON     
+  | COMMA         
 
 exception LexingError of string  (* Error message for lexing issues *)
