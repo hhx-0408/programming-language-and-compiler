@@ -1,2 +1,6 @@
-PLAY (Do4# quarter, Re4_ half);
-END;
+title "Fur Elise";
+composer "Beethoven";
+instrument piano;
+bpm 100;
+play Mi5_ Fa5_ Mi5_ Re5_ Do5_ Re5_ Mi5_;
+end

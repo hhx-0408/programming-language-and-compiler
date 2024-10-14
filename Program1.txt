@@ -1,6 +1,6 @@
-INSTRUMENT = Piano;
-BPM = 120;
-COMPOSER = "Ludwig van Beethoven";
-TITLE = "Symphony No. 5";
-PLAY Do4# quarter;
-END;
+title "Ode to Joy";
+composer "Beethoven";
+instrument piano;
+bpm 120;
+play Do5#;
+end
