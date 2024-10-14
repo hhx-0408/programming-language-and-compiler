@@ -1,5 +1,3 @@
- 
-# **Project README**
 
 ## **Team Members**
 
