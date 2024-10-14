@@ -141,6 +141,7 @@ Our language consists of the following token types:
 ### **Prerequisites**
 
 - **OCaml Compiler**: Ensure that the OCaml compiler (`ocamlc`) is installed on your system.
+- Instruction for installing Ocaml: https://ocaml.org/docs/installing-ocaml
 
   - **Installation on Ubuntu/Debian**:
     ```bash
