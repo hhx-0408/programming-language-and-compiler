@@ -58,8 +58,8 @@ Our custom language is designed for music composition and playback commands. It 
 3. **Composer and Title Declaration**: Allows the user to assign a title and a composer name for the piece.
    
    ```plaintext
-   TITLE = "Symphony No. 5";
-   COMPOSER = "Ludwig van Beethoven";
+   TITLE = "Some Title";
+   COMPOSER = "Some Composer";
    ```
 
 4. **Play Command**: Defines the notes to be played along with their duration. A note consists of a solfege syllable (e.g., `Do`, `Re`), an octave (0-7), and an optional accidental (`#`, `-`, `_`).
@@ -93,9 +93,9 @@ Our language consists of the following token types:
 
    - **Regex**: `[a-zA-Z][a-zA-Z0-9_]*`
 
-3. **Operators**: Used for assignments, including `=`.
+3. **Operators**: Used for assignments, including `=` and `:`.
 
-   - **Regex**: `=`
+   - **Regex**: `=``:`
 
 4. **Numbers**: Represent integer values, such as BPM or the octave of a note.
 
@@ -105,7 +105,7 @@ Our language consists of the following token types:
 
    - **Regex**: `\"[^\n\r\"]*\"`
 
-6. **Music Notes**: Music notes consist of a solfege syllable (e.g., `Do`, `Re`), followed by an octave number, and an optional accidental (`#`, `-`, `_`).
+6. **Music Notes**: Music notes consist of a solfege syllable (e.g., `Do`, `Re`), followed by an octave number, and an accidental (`#`, `-`, `_`).
 
    - **Regex**: `(do|re|mi|fa|so|la|ti)[0-7](#|-|_)`
 
@@ -124,7 +124,7 @@ Our language consists of the following token types:
 |----------------|---------------|-------------------------------------------|
 | KEYWORD        | `play`        | Reserved words                            |
 | IDENTIFIER     | `Piano`       | User-defined names                        |
-| OPERATOR       | `=`           | Assignment operator                       |
+| OPERATOR       | `=``:`        | Assignment operator                       |
 | NUMBER         | `120`         | Numeric literals                          |
 | STRING_LITERAL | `"Beethoven"` | Text enclosed in double quotes            |
 | MUSICNOTE      | `Do5#`        | Music note notation                       |
@@ -171,7 +171,7 @@ Run the lexer using the provided shell script:
 ./install_and_run.sh <input_file>
 ```
 
-- Replace `<input_file>` with the path to one of the sample input programs or your own source code file.
+- Replace `<input_file>` with the path to one of the sample input programs.
 
 **Example**:
 
@@ -244,7 +244,7 @@ PLAY Mi5_ Fa5_ Mi5_ Re5_ Do5_ Re5_ Mi5_;
 END;
 ```
 
-**Description**: This program plays a sequence of music notes on a violin at 100 BPM.
+**Description**: This program intends to play a sequence of music notes on a violin at 100 BPM.
 
 **Expected Output**:
 
@@ -260,9 +260,7 @@ END;
 <KEYWORD, "PLAY">
 <MUSICNOTE, "Mi5_">
 <MUSICNOTE, "Fa5_">
-<M
-
-USICNOTE, "Mi5_">
+<MUSICNOTE, "Mi5_">
 <MUSICNOTE, "Re5_">
 <MUSICNOTE, "Do5_">
 <MUSICNOTE, "Re5_">
@@ -288,7 +286,7 @@ mi3#,,,
 Do3
 ```
 
-**Description**: This program includes invalid characters such as `#` in an identifier and special characters in string literals.
+**Description**: This program includes invalid characters such as `#` in an identifier.
 
 **Expected Output**:
 
@@ -306,12 +304,7 @@ LexingError: Invalid character '#' at position 25
 
 ```plaintext
 do3#
-*}{INSTRUMENT = Piano;
-BPM = 120;
-COMPOSER = "Ludwig van Beethoven";
-TITLE = "Symphony No. 5";
-PLAY Do4# quarter;
-END;
+*
 ```
 
 **Description**: This program includes invalid syntax and characters (`*`), testing the lexer’s error handling capabilities.
