@@ -5,7 +5,7 @@
 - **Name**: Huilin Tai, Huixuan Huang
 - **UNI**: HT2666, 
 
-*(Add additional team members as necessary.)*
+ 
 
 ---
 
