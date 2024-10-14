@@ -1,5 +1,4 @@
-After reviewing your code and matching it with the project requirements, here is a revised and accurate description for your README file. I've double-checked the lexer's structure, language specifications, and ensured that the provided test cases and expected outputs align with the functionality of your code.
-
+ 
 # **Project README**
 
 ## **Team Members**
